@@ -1,12 +1,15 @@
-function isPowerOfTwo(n) {
-    if (n <= 0) {
-        return false;
+function checkPowerOfTwo() {
+    var inputNumber = parseInt(document.getElementById('number').value);
+
+    if (inputNumber <= 0) {
+        document.getElementById('result').innerText = 'Please enter a positive integer.';
+        return;
     }
-    
-    return (n & (n - 1)) === 0;
+
+    // Check if the number is a power of two
+    if ((inputNumber & (inputNumber - 1)) === 0) {
+        document.getElementById('result').innerText = inputNumber + ' is a power of two.';
+    } else {
+        document.getElementById('result').innerText = inputNumber + ' is not a power of two.';
+    }
 }
-
-
-const input = 2;
-const result = isPowerOfTwo(input);
-console.log(result);  
